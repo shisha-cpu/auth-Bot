@@ -23,10 +23,12 @@
   <p>Ваш уникальный ID: <span id="user-id"></span></p>
 
   <script>
-    // Получаем параметр user_id из URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const userId = urlParams.get('user_id');
-    document.getElementById('user-id').textContent = userId;
+    const url = document.URL
+    const strs = url.split('/');
+    const id = strs.at(-1)
+    console.log(id)
+    const userId = document.getElementById('user-id')
+    userId.innerHTML = id
   </script>
 </body>
 </html>
