@@ -23,13 +23,9 @@
   <p>Ваш уникальный ID: <span id="user-id"></span></p>
 
   <script>
-    const url = document.URL
-
-    // const strs = url.split('/');
-    // const id = strs.at(-1)
-    // console.log(id)
-    const userId = document.getElementById('user-id')
-    userId.innerHTML = url
+    const params = new URLSearchParams(window.location.search);
+    const userId = params.get('user_id');
+    document.getElementById('user-id').textContent = userId || 'ID не найден';
   </script>
 </body>
 </html>
